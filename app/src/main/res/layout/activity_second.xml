@@ -1,0 +1,74 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.example.activitiesexercises.SecondActivity">
+
+    <TextView
+        android:id="@+id/txvOnCreate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/onCreate"/>
+
+    <TextView
+        android:id="@+id/txvCreateCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/txvOnCreate"
+        android:text="@string/defaultCount"/>
+
+    <TextView
+        android:id="@+id/txvOnStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/onStart"
+        android:layout_below="@+id/txvOnCreate"/>
+
+    <TextView
+        android:id="@+id/txvStartCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txvCreateCount"
+        android:layout_toRightOf="@id/txvOnStart"
+        android:text="@string/defaultCount"/>
+
+    <TextView
+        android:id="@+id/txvOnResume"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/onResume"
+        android:layout_below="@id/txvOnStart"/>
+
+    <TextView
+        android:id="@+id/txvResumeCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txvStartCount"
+        android:layout_toRightOf="@id/txvOnResume"
+        android:text="@string/defaultCount"/>
+
+    <TextView
+        android:id="@+id/txvOnRestart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/onRestart"
+        android:layout_below="@id/txvOnResume"/>
+
+    <TextView
+        android:id="@+id/txvRestartCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txvResumeCount"
+        android:layout_toRightOf="@id/txvOnRestart"
+        android:text="@string/defaultCount"/>
+
+    <Button
+        android:text="@string/endTwo"
+        android:onClick="endTwo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txvOnRestart"/>
+
+</RelativeLayout>
