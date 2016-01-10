@@ -24,9 +24,28 @@ public class SecondActivity extends AppCompatActivity {
         txvRestartCount = (TextView) findViewById(R.id.txvRestartCount);
         txvResumeCount = (TextView) findViewById(R.id.txvResumeCount);
 
+        findViewById(R.id.closeSecond).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SecondActivity.this.finish();
+            }
+        });
+
+        if (savedInstanceState != null) {
+            if (savedInstanceState.containsKey("countRestart"))
+                countRestart = savedInstanceState.getInt("countRestart");
+            if (savedInstanceState.containsKey("countResume"))
+                countResume = savedInstanceState.getInt("countResume");
+            if (savedInstanceState.containsKey("countStart"))
+                countStart = savedInstanceState.getInt("countStart");
+            if (savedInstanceState.containsKey("countCreate"))
+                countCreate = savedInstanceState.getInt("countCreate");
+        }
+
         ++countCreate;
 
         txvCreateCount.setText(Integer.toString(countCreate));
+        txvRestartCount.setText(Integer.toString(countRestart));
         Log.i("activity", "onCreate()");
     }
 
@@ -79,28 +98,10 @@ public class SecondActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
-    public void endTwo(View view){
-        this.finish();
+    public void onSaveInstanceState(Bundle outState) {
+        outState.putInt("countCreate", countCreate);
+        outState.putInt("countStart", countStart);
+        outState.putInt("countResume", countResume);
+        outState.putInt("countRestart", countRestart);
     }
 }

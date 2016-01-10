@@ -68,8 +68,8 @@
         android:freezesText="true"/>
 
     <Button
+        android:id="@+id/startTwo"
         android:text="@string/startTwo"
-        android:onClick="startTwo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/txvOnRestart"/>

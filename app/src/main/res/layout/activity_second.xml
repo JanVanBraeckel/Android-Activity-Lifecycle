@@ -65,8 +65,8 @@
         android:text="@string/defaultCount"/>
 
     <Button
+        android:id="@+id/closeSecond"
         android:text="@string/endTwo"
-        android:onClick="endTwo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/txvOnRestart"/>
