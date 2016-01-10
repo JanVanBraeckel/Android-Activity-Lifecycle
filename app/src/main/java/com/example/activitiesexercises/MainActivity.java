@@ -25,14 +25,21 @@ public class MainActivity extends AppCompatActivity {
         txvRestartCount = (TextView) findViewById(R.id.txvRestartCount);
         txvResumeCount = (TextView) findViewById(R.id.txvResumeCount);
 
-        countRestart =savedInstanceState.getInt("countRestart");
-        countResume= savedInstanceState.getInt("countResume");
-        countStart=savedInstanceState.getInt("countStart");
-        countCreate = savedInstanceState.getInt("countCreate");
+        if (savedInstanceState != null) {
+            if (savedInstanceState.containsKey("countRestart"))
+                countRestart = savedInstanceState.getInt("countRestart");
+            if (savedInstanceState.containsKey("countResume"))
+                countResume = savedInstanceState.getInt("countResume");
+            if (savedInstanceState.containsKey("countStart"))
+                countStart = savedInstanceState.getInt("countStart");
+            if (savedInstanceState.containsKey("countCreate"))
+                countCreate = savedInstanceState.getInt("countCreate");
+        }
 
         ++countCreate;
 
         txvCreateCount.setText(Integer.toString(countCreate));
+        txvRestartCount.setText(Integer.toString(countRestart));
         Log.i("activity", "onCreate()");
     }
 
@@ -106,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void startTwo(View view){
+    public void startTwo(View view) {
         Intent intent = new Intent(this, SecondActivity.class);
         startActivity(intent);
     }
